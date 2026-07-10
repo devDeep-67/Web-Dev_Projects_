@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.main_box {
+    /* Added a dark fallback color in case mini.jpg doesn't load */
+    background-color: #2b2b2b; 
+    background-image: url("mini.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center; /* Helps center the image */
+}
+
+.btn_one i {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer; /* Shows it is clickable */
+}
+
+.sidebar_menu {
+    position: fixed;
+    left: -350px;
+    height: 100vh;
+    width: 300px;
+    /* Fixed the invalid '2500' rgb values below */
+    background-color: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .logo {
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5);
+    height: 60px;
+}
+
+.sidebar_menu .logo a {
+    position: absolute;
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu .btn_two i {
+    color: grey;
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    left: 275px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+}
+
+.sidebar_menu .menu li {
+    margin-top: 6px;
+    padding: 10px 20px;
+}
+
+/* Fixed the selector so it only applies to menu links */
+.sidebar_menu .menu i, 
+.sidebar_menu .menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu i {
+    padding-right: 8px;
+}
+
+.sidebar_menu .social_media {
+    position: absolute;
+    left: 25%;
+    bottom: 50px;
+}
+
+.sidebar_menu .social_media i {
+    color: #ffffff;
+    opacity: 0.5;
+    padding: 0 5px;
+    transition: all 0.3s ease; /* Added transition for smooth hover */
+}
+
+#check {
+    display: none;
+}
+
+/* Fixed the invalid '2500' rgb value */
+.sidebar_menu .menu li:hover {
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.btn_one i:hover {
+    font-size: 40px;
+    transition: all 0.3s linear;
+}
+
+.btn_two i:hover {
+    font-size: 30px;
+}
+
+.sidebar_menu .social_media i:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Checkbox Toggle Logic */
+#check:checked ~ .sidebar_menu {
+    left: 0;
+}
+
+#check:checked ~ .btn_one {
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i {
+    opacity: 1;
+}
